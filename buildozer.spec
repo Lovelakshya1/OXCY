@@ -1,17 +1,21 @@
 [app]
 title = OXCY
 package.name = oxcy
-package.domain = org.oxcy.app
+package.domain = org.oxcy.music
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 1.0.0
-requirements = python3,flet,yt-dlp,requests,ffmpeg-python
+requirements = python3,flet,yt-dlp,requests
 
-# Android specific
-android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
-android.api = 33
-android.minapi = 21
+# Android UI Settings
+orientation = portrait
+fullscreen = 0
 android.archs = arm64-v8a
+android.api = 33
 
-# This packs FFmpeg into the APK!
-android.add_jars = assets/ffmpeg-android-arm64.jar
+# Icon & Splash (Ensure these files exist in your 'assets' folder)
+icon.filename = %(source.dir)s/assets/icon.png
+presplash.filename = %(source.dir)s/assets/icon.png
+
+# Permissions
+android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
