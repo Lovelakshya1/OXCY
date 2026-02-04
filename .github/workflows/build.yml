@@ -6,17 +6,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install Buildozer dependencies
+
+      - name: Install System Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential libffi-dev python3-dev
+          sudo apt-get install -y build-essential libffi-dev python3-dev zip unzip
           pip install --user --upgrade buildozer cython virtualenv
-      - name: Build APK
-        run: buildozer android debug
+
+      - name: Build with Buildozer
+        # 'yes |' automatically accepts all Android licenses
+        run: yes | buildozer android debug
+        
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
