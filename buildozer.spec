@@ -5,7 +5,7 @@ package.domain = org.oxcy.music
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 1.0.0
-requirements = python3,flet,yt-dlp,requests
+requirements = python3,flet,yt-dlp,requests,urllib3,certifi,charset-normalizer,idna
 
 # Android UI Settings
 orientation = portrait
