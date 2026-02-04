@@ -1,21 +1,22 @@
 [app]
 title = OXCY
 package.name = oxcy
-package.domain = org.oxcy.music
+package.domain = org.oxcy.app
 source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 version = 1.0.0
-requirements = python3,flet,yt-dlp,requests,urllib3,certifi,charset-normalizer,idna
 
-# Android UI Settings
+# Critical: 'openssl' and 'libffi' are added to prevent compilation errors
+requirements = python3,flet,requests,urllib3,openssl,libffi
+
 orientation = portrait
 fullscreen = 0
 android.archs = arm64-v8a
 android.api = 33
+android.minapi = 21
+android.accept_sdk_license = True
 
-# Icon & Splash (Ensure these files exist in your 'assets' folder)
 icon.filename = %(source.dir)s/assets/icon.png
 presplash.filename = %(source.dir)s/assets/icon.png
 
-# Permissions
-android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
+android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
