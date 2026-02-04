@@ -1,23 +1,5 @@
-[app]
-title = OXCY
-package.name = oxcy
-package.domain = org.oxcy.app
-source.dir = .
-source.include_exts = py,png,jpg,kv,atlas
-version = 1.0.0
+# MINIMAL REQUIREMENTS: Just Python and Flet
+requirements = python3,flet
 
-# REQUIREMENTS: python3, flet, requests, yt-dlp, openssl, sqlite3
-requirements = python3,flet,requests,yt-dlp,openssl,sqlite3
-
-orientation = portrait
-fullscreen = 0
-android.archs = arm64-v8a
-android.api = 33
-android.minapi = 21
-android.accept_sdk_license = True
-
-icon.filename = %(source.dir)s/assets/icon.png
-presplash.filename = %(source.dir)s/assets/icon.png
-
-# PERMISSIONS: Critical for Downloading
-android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
+# (Keep everything else the same)
+android.permissions = INTERNET
