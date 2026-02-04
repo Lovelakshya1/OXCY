@@ -7,8 +7,8 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 1.0.0
 
 # PATHS TO YOUR ASSETS
-icon.filename = assets/icon.png
-presplash.filename = assets/icon.png
+icon.filename = %(source.dir)s/assets/icon.png
+presplash.filename = %(source.dir)s/assets/icon.png
 
 # UPDATED REQUIREMENTS FOR API AND LOGIC
 requirements = python3,flet,yt-dlp,google-api-python-client,requests,certifi,urllib3
