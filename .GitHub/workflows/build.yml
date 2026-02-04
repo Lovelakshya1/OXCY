@@ -5,17 +5,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.11
-      - name: Install Buildozer
-        run: pip install buildozer cython
+          python-version: '3.11'
+      - name: Install Buildozer dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libffi-dev python3-dev
+          pip install --user --upgrade buildozer cython virtualenv
       - name: Build APK
         run: buildozer android debug
       - name: Upload APK
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
-          name: OXCY-Release
+          name: OXCY-App
           path: bin/*.apk
